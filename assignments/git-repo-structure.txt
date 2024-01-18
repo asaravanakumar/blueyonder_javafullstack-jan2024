@@ -1,0 +1,38 @@
+blueyonder_javabootcamp-jan2024
+
+	|
+	|____	labs
+			|
+			|__java
+					|
+					|___ java-labs
+	
+
+
+	|
+	|____ 	assignments
+				|
+				|__java
+					|
+					|___java-assignments								
+					|
+					|___bankingapp-with-arrays				
+										
+					|___bankingapp-with-collection
+					|
+					|___bankingapp-with-collection-stats
+					|
+					 __ bankingapp-with-impexp
+					|
+					 __ bankingapp-with-impexp-thread
+					|
+					 __ bankingapp-with-lamexp-stream-stats
+					|
+					 __ bankingapp-with-jdbc
+					|
+					 __ bankingapp-with-junit
+
+				
+	|
+	|____ 	capstone
+				

@@ -1,0 +1,12 @@
+ASSIGNMENT 01: Create a simple prime number program
+ASSIGNMENT 02: Create a simple odd even number program
+ASSIGNMENT 03: Create a swap of two numbers program
+ASSIGNMENT 04: Create a program to sort given set of values
+
+ASSIGNMENT 05: Build Java Console based Banking App which below functionalities using Arrays with Exception Handling
+				1] Add Account
+				2] View All Accounts
+				3] View Account
+				4] Update Account
+				5] Delete Account
+				6] Exit

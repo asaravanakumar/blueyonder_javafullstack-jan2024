@@ -1,0 +1,24 @@
+EXERCISE 01: Write a Java program to convert temperature from Celsius to Fahrenheit degrees.
+Test Data
+Input a degree in Celsius: 100.0
+Expected Output:
+100.0 degree Celsius is equal to 212 in Fahrenheit
+
+java CelsiusToFahrenheit.java 100 
+
+
+
+
+
+
+
+
+
+
+
+EXERCISE 02: Write a Java program that reads an integer between 0 and 1000 and adds all the digits in the integer.
+
+Test Data
+Input an integer between 0 and 1000: 785
+Expected Output :
+The sum of all digits in 785 is 20
