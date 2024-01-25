@@ -21,9 +21,7 @@ blueyonder_javabootcamp-jan2024
 					|___bankingapp-with-collection
 					|
 					|___bankingapp-with-collection-stats
-					|
-					 __ bankingapp-with-impexp
-					|
+					|					|
 					 __ bankingapp-with-impexp-thread
 					|
 					 __ bankingapp-with-lamexp-stream-stats
@@ -31,8 +29,6 @@ blueyonder_javabootcamp-jan2024
 					 __ bankingapp-with-jdbc
 					|
 					 __ bankingapp-with-junit
-
-				
 	|
 	|____ 	capstone
 				
