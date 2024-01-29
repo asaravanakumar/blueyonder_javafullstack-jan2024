@@ -6,16 +6,16 @@ import java.sql.*;
 
 public class JdbcWithScrollableUpdatableResultSetEx {
 	// JDBC driver name and database URL
-	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	//	static final String JDBC_DRIVER = "org.postgresql.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3306/training";
-//	static final String DB_URL = "jdbc:postgresql://localhost:5432/training";
+//	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+		static final String JDBC_DRIVER = "org.postgresql.Driver";
+//	static final String DB_URL = "jdbc:mysql://localhost:3306/training";
+	static final String DB_URL = "jdbc:postgresql://localhost:5432/training";
 
 	// Database credentials
-	static final String USER = "training";
-	static final String PASS = "training";
-//	static final String USER = "postgres";
-//	static final String PASS = "postgres";
+//	static final String USER = "training";
+//	static final String PASS = "training";
+	static final String USER = "postgres";
+	static final String PASS = "postgres";
 
 	public static void main(String[] args) {
 

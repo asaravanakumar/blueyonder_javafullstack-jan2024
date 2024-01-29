@@ -1,6 +1,6 @@
 package com.examples.java.jdbc;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
+import org.postgresql.ds.PGSimpleDataSource;
 
 import java.io.FileInputStream;
 import java.sql.*;
@@ -16,20 +16,20 @@ public class JdbcWithExternalConfigEx {
 		ResultSet rs = null;
 		try {
 			// STEP 2: Create Datasource instance
-			MysqlDataSource dataSource = new MysqlDataSource();
-//			PGSimpleDataSource dataSource = new PGSimpleDataSource();
+//			MysqlDataSource dataSource = new MysqlDataSource();
+			PGSimpleDataSource dataSource = new PGSimpleDataSource();
 
 			// Loading configuration from properties file
 			Properties prop = new Properties();
-			prop.load(new FileInputStream("jdbc.properties"));
+			prop.load(new FileInputStream("config/jdbc.properties"));
 
 			String dbHost = prop.getProperty("dbHost");
 			String dbName = prop.getProperty("dbName");
 			String username = prop.getProperty("username");
 			String password = prop.getProperty("password");
 
-			dataSource.setServerName(dbHost);
-//			dataSource.setServerNames(new String[]{dbHost});
+//			dataSource.setServerName(dbHost); // MySQL
+			dataSource.setServerNames(new String[]{dbHost}); // Postgres
 			dataSource.setDatabaseName(dbName);
 			dataSource.setUser(username);
 			dataSource.setPassword(password);

@@ -3,21 +3,23 @@ package com.examples.java.jdbc;
 //STEP 1. Import required packages
 
 import com.mysql.cj.jdbc.MysqlDataSource;
+import org.postgresql.ds.PGSimpleDataSource;
+
 
 import java.sql.*;
 
 public class JdbcWithDataSourceEx {
 
 	// Database URL
-	static final String DB_URL = "jdbc:mysql://localhost:3306/training";
+//	static final String DB_URL = "jdbc:mysql://localhost:3306/training";
 
-//	static final String DB_URL = "jdbc:postgresql://localhost:5432/training";
+	static final String DB_URL = "jdbc:postgresql://localhost:5432/training";
 
 	// Database credentials
-	static final String USER = "training";
-	static final String PASS = "training";
-//	static final String USER = "postgres";
-//	static final String PASS = "postgres";
+//	static final String USER = "training";
+//	static final String PASS = "training";
+	static final String USER = "postgres";
+	static final String PASS = "postgres";
 
 	public static void main(String[] args) {
 		Connection conn = null;
@@ -26,15 +28,15 @@ public class JdbcWithDataSourceEx {
 		ResultSet rs = null;
 		try {
 			// STEP 2: Create Datasource instance
-			MysqlDataSource dataSource = new MysqlDataSource();
-			dataSource.setUrl(DB_URL);
-			dataSource.setUser(USER);
-			dataSource.setPassword(PASS);
-
-//			PGSimpleDataSource dataSource = new PGSimpleDataSource();
+//			MysqlDataSource dataSource = new MysqlDataSource();
 //			dataSource.setUrl(DB_URL);
 //			dataSource.setUser(USER);
 //			dataSource.setPassword(PASS);
+
+			PGSimpleDataSource dataSource = new PGSimpleDataSource();
+			dataSource.setUrl(DB_URL);
+			dataSource.setUser(USER);
+			dataSource.setPassword(PASS);
 
 			// STEP 3: Open a connection
 			System.out.println("Connecting to database...");

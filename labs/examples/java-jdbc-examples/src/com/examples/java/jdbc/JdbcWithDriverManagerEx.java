@@ -6,16 +6,16 @@ import java.sql.*;
 
 public class JdbcWithDriverManagerEx {
 	// JDBC driver name and database URL
-	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
-	//	static final String JDBC_DRIVER = "org.postgresql.Driver";
-	static final String DB_URL = "jdbc:mysql://localhost:3306/training";
-//	static final String DB_URL = "jdbc:postgresql://localhost:5432/training";
+//	static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+		static final String JDBC_DRIVER = "org.postgresql.Driver";
+//	static final String DB_URL = "jdbc:mysql://localhost:3306/training";
+	static final String DB_URL = "jdbc:postgresql://localhost:5432/training";
 
 	// Database credentials
-	static final String USER = "training";
-	static final String PASS = "training";
-//	static final String USER = "postgres";
-//	static final String PASS = "postgres";
+//	static final String USER = "training";
+//	static final String PASS = "training";
+	static final String USER = "postgres";
+	static final String PASS = "postgres";
 
 	public static void main(String[] args) {
 
@@ -40,22 +40,22 @@ public class JdbcWithDriverManagerEx {
 			stmt = conn.createStatement();
 
 			// Insertion with Statement
-			String insertQuery = "INSERT INTO employee (name, age, designation, department, country) VALUES ('Sunil', 30, 'Developer', 'Admin', 'India')";
-			//boolean status = stmt.execute(insertQuery);
-			int insertCount = stmt.executeUpdate(insertQuery);
-			System.out.println("Employee inserted " + insertCount);
+//			String insertQuery = "INSERT INTO employee (name, age, designation, department, country) VALUES ('Sunil', 30, 'Developer', 'Admin', 'India')";
+//			//boolean status = stmt.execute(insertQuery);
+//			int insertCount = stmt.executeUpdate(insertQuery);
+//			System.out.println("Employee inserted " + insertCount);
 
 			// Insertion with Prepared Statement
-//			String insertQueryForPrepareStmt = "INSERT INTO employee (name, age, designation, department, country) VALUES (?, ?, ?, ?, ?)";
-//			pstmt = conn.prepareStatement(insertQueryForPrepareStmt);
-//			pstmt.setString(1, "Mathew");
-//			pstmt.setInt(2, 30);
-//			pstmt.setString(3, "Lead");
-//			pstmt.setString(4, "IT");
-//			pstmt.setString(5, "India");
-//			int insertCount = pstmt.executeUpdate();
-//			pstmt.close();
-//			System.out.println(insertCount + " Employee(s) inserted");
+			String insertQueryForPrepareStmt = "INSERT INTO employee (name, age, designation, department, country) VALUES (?, ?, ?, ?, ?)";
+			pstmt = conn.prepareStatement(insertQueryForPrepareStmt);
+			pstmt.setString(1, "Mathew");
+			pstmt.setInt(2, 30);
+			pstmt.setString(3, "Lead");
+			pstmt.setString(4, "IT");
+			pstmt.setString(5, "India");
+			int insertCount = pstmt.executeUpdate();
+			pstmt.close();
+			System.out.println(insertCount + " Employee(s) inserted");
 
 			// Updation with Prepared Statement
 //			String updateQuery = "UPDATE employee SET designation = ? WHERE id = ?";
