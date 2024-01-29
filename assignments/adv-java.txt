@@ -46,4 +46,10 @@ ASSIGNMENT 08: Enhance Banking App to import and export the details from or to f
 				8] Export [Account Details]
 				9] Exit
 
+ASSIGNMENT 09: Enhance Banking App to persist account details in database and perform CRUD operations using JDBC
+
+
+
+
+
 
