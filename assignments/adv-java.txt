@@ -48,6 +48,10 @@ ASSIGNMENT 08: Enhance Banking App to import and export the details from or to f
 
 ASSIGNMENT 09: Enhance Banking App to persist account details in database and perform CRUD operations using JDBC
 
+ASSIGNMENT 10: Enhance Banking App to do Account detail validation using Lambda Expression and implement Print Statistics using Stream API
+
+ASSIGNMENT 11: Migrate Banking App [ASSIGNMENT 10] as Maven Java project and add Junit test cases with Mockito
+
 
 
 
