@@ -29,6 +29,10 @@ blueyonder_javabootcamp-jan2024
 					 __ bankingapp-with-jdbc
 					|
 					 __ bankingapp-with-junit
+				|
+				|__java
+					|
+					|___bankingapp-with-spring-core-jdbc
 	|
 	|____ 	capstone
 				
