@@ -1,1 +1,1 @@
-ASSIGNMENT 12: Enhance Banking App (ASSIGNMENT 10) to persist account details in database and perform CRUD operations using JDBC with Spring XML Based Configuration
+ASSIGNMENT 12: Enhance Banking App (ASSIGNMENT 10) to persist account details in database and perform CRUD operations using JDBC with Spring XML Based and Java Based Configuration
