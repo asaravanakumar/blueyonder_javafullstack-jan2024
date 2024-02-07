@@ -9,7 +9,7 @@
 
 	<properties>
 		<java-version>21</java-version>
-		<org.springframework-version>5.3.28</org.springframework-version>
+<!--		<org.springframework-version>5.3.28</org.springframework-version>-->
 <!--		<javax.servlet-api-version>4.0.1</javax.servlet-api-version>-->
 		 <servlet-api-version>6.0.0</servlet-api-version>
 		<org.postgres-version>42.7.0</org.postgres-version>
