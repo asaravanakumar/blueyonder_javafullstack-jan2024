@@ -1,0 +1,9 @@
+ASSIGNMENT 12: Enhance Banking App (ASSIGNMENT 10) to persist account details in database and perform CRUD operations using JDBC with Spring XML Based and Java Based Configuration
+
+ASSIGNMENT 13: Enhance Banking App (ASSIGNMENT 11) to expose REST API to manage the accounts and perform CRUD operations using JDBC with exception handling and logging using Spring REST
+
+GET 		/accounts
+POST		/accounts
+GET		/accounts/{id}
+PUT		/accounts/{id}
+DELETE	/accounts/{id}
