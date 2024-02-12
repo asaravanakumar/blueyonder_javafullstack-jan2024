@@ -1,5 +1,5 @@
 
-ASSIGNMENT 13: Enhance Banking App (ASSIGNMENT 11) to expose REST API to manage the accounts and perform CRUD operations using JDBC and JDBC Temp with validation, exception handling, content negotiation and logging using Spring REST
+ASSIGNMENT 13: Enhance Banking App (ASSIGNMENT 12) to expose REST API to manage the accounts and perform CRUD operations using JDBC and JDBC Temp with validation, exception handling, content negotiation and logging using Spring REST
 
 GET 		/accounts
 POST		/accounts

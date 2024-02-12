@@ -1,0 +1,12 @@
+
+ASSIGNMENT 14: Enhance Banking App (ASSIGNMENT 13) to expose REST API to manage the accounts and perform CRUD operations using JDBC Temp with validation, exception handling, content negotiation and logging using Spring Boot REST
+
+GET 		/accounts
+POST		/accounts
+GET		/accounts/{id}
+PUT		/accounts/{id}
+DELETE	/accounts/{id}
+
+Validation Rules: 
+1] Mandatory Fields - Name, Type
+2] Balance and ROI - Should not be negative
