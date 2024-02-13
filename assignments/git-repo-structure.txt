@@ -35,6 +35,12 @@ blueyonder_javabootcamp-jan2024
 					|___bankingapp-with-spring-core-jdbc
 					|
 					|___bankingapp-with-spring-rest
+				|
+				|__sboot
+					|
+					|___bankingapp-with-sboot-rest-jdbc-temp
+					|
+					|___bankingapp-with-sboot-rest-jpa
 	|
 	|____ 	capstone
 				
