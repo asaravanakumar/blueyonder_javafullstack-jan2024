@@ -11,5 +11,5 @@ Validation Rules:
 1] Mandatory Fields - Name, Type
 2] Balance and ROI - Should not be negative
 
-ASSIGNMENT 15: Enhance Banking App REST API (ASSIGNMENT 14) to manage the accounts and perform CRUD operations using Spring Boot JPA with Hibernate with validation, exception handling, content negotiation and logging
+ASSIGNMENT 15: Enhance Banking App REST API (ASSIGNMENT 14) to manage the accounts and perform CRUD operations using Spring Boot JPA and Spring Data JPA with Hibernate with validation, exception handling, content negotiation, logging and Lombok support
 
