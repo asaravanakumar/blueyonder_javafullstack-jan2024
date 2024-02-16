@@ -16,7 +16,7 @@ blueyonder_javabootcamp-jan2024
 					|
 					|___java-assignments								
 					|
-					|___bankingapp-with-arrays				
+					|___banking app-with-arrays				
 										
 					|___bankingapp-with-collection
 					|
@@ -43,4 +43,10 @@ blueyonder_javabootcamp-jan2024
 					|___bankingapp-with-sboot-rest-jpa
 	|
 	|____ 	capstone
+					|
+					|___ ecomapp
+					|
+					|___ bankingapp
+				
+
 				

@@ -1,0 +1,134 @@
+Capstone Project: Enhance Banking Application to have micro services based architecture with
+Spring Boot + Spring Cloud + REST + Validation + Spring Data JPA / H2 + Unit Testing + Security + Integration/API Testing
+
+				bankingapp
+					|
+					|__account-service
+					|
+					|__transaction-service
+					|
+					|__fund-transfer-service
+					|
+					|__notification-service
+					|
+					|__gateway-service	
+					|
+					|__registry-service
+					|
+					|__auth-service	
+					|
+					|__admin-service
+
+REST API
+	
+	Account Service [account-service]
+	GET 	/accounts
+	GET	/accounts/{id}
+	POST	/accounts
+	PUT	/accounts/{id}
+	DELETE	/accounts/{id}
+	
+	Transaction Service [transaction-service]
+	GET 	/transactions
+	GET	/transactions/{id}
+	POST	/transactions
+	PUT	/transactions/{id}
+	DELETE	/transactions/{id}
+	
+	Fund Transfer Service	[fund-transfer-service]
+	POST 	/fundTransfers
+
+	Notification Service [notification-service]
+	Event Driven
+
+	Account
+		int id
+		String name
+		AccountType type
+		double balance
+		boolean active
+		LocalDateTime createDate
+		LocalDateTime updateDate
+		
+	{
+		"name": "xyz",
+		"type": "Savings|Current|Loan",
+	}
+		
+	Transaction
+		int id
+		String type
+		String description
+		double amount
+		Account account
+		LocalTime transactionTime
+		
+	{
+		"type": "Credit|Debit",
+		"description": "School Fee"
+		"amount": 50000,
+		"accountId": 100
+	}
+	
+	
+	Fund Transfers
+	
+	{
+		"sourceAccountId": 100,
+		"targetAccoundId": 200
+		"amount": 50000,
+		"description": "School Fee"
+	}	
+	
+Package
+=======
+
+com
+  |
+  |___ blueyonder
+          |
+		  |______ bankingapp
+					|
+					|_____ AccountServiceMain|TransactionServiceMain|FundTransferServiceMain|NotificationServiceMain|	
+						RegistryServiceMain|GatewayServiceMain|AdminMain
+					
+					|
+					|______ service
+							|
+							|_____ AccountService
+							|
+							|_____ TransactionService
+							|
+							|_____ FundTransferService
+							|
+							|_____ NotificationService
+								
+					|
+					|_______ model
+							   |
+							   |____ Account
+							   |
+							   |____ Transaction							   
+					|
+					|_______ repository
+							  |
+							  |_____ AccountRepository
+							  |
+							  |_____ TransactionRepository
+					|
+					|_______ exception
+							  |
+							  |_____ NoAccountFoundException
+							  |
+							  |_____ AccountValidationException
+							  |
+							  |_____ AccountException
+							  |
+							  |_____ NoTransactionFoundException
+							  |
+							  |_____ TransactionValidationException
+							  |
+							  |_____ TransactionException							  
+					|
+					|_______ util	
+	
