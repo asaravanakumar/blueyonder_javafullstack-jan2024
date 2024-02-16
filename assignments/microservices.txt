@@ -46,13 +46,19 @@ REST API
 		String name
 		AccountType type
 		double balance
+		double roi
 		boolean active
-		LocalDateTime createDate
-		LocalDateTime updateDate
+		LocalDateTime createTimestamp
+		LocalDateTime updateTimestamp
 		
 	{
 		"name": "xyz",
 		"type": "Savings|Current|Loan",
+		"balance" 50000.0,
+		"roi": 7.5
+		"active": true|false
+		"createTimestamp": "2023-02-16T16:00:00",
+		"updateTimestamp": "2023-02-16T16:00:00"
 	}
 		
 	Transaction
@@ -61,13 +67,14 @@ REST API
 		String description
 		double amount
 		Account account
-		LocalTime transactionTime
+		LocalDateTime transactionTimestamp
 		
 	{
 		"type": "Credit|Debit",
 		"description": "School Fee"
 		"amount": 50000,
-		"accountId": 100
+		"accountId": 100,
+		"transactionTimestamp": "2023-02-16T16:00:00"
 	}
 	
 	
