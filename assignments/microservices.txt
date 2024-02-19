@@ -27,13 +27,13 @@ REST API
 	POST	/accounts
 	PUT	/accounts/{id}
 	DELETE	/accounts/{id}
+	POST 	/accounts/{id}/deposits
+	POST 	/accounts/{id}/withdrawal
 	
 	Transaction Service [transaction-service]
 	GET 	/transactions
 	GET	/transactions/{id}
 	POST	/transactions
-	PUT	/transactions/{id}
-	DELETE	/transactions/{id}
 	
 	Fund Transfer Service	[fund-transfer-service]
 	POST 	/fundTransfers
@@ -63,7 +63,7 @@ REST API
 		
 	Transaction
 		int id
-		String type
+		TransactionType type
 		String description
 		double amount
 		Account account
