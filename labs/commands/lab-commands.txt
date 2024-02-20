@@ -1,0 +1,26 @@
+#Creating executatble JAR
+#Navigage to <%PROJECT_HOME%>\bin
+jar cfe employee-mgmt-app.jar com.examples.java.empapp.EmployeeManagementApp .
+mv employee-mgmt-app.jar ../
+	
+#Running Employee Management App from Command Line
+java -jar employee-mgmt-app.jar
+java -jar -Xms64M -Xmx128M employee-mgmt-app.jar
+java -jar -Xms64M -Xmx128M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=heapdump.hprof employee-mgmt-app.jar
+
+
+#Running Employee Management App with MySQL connectivity from Command Line
+java -cp employee-mgmt-app-jdbc.jar;lib\mysql-connector-java-5.1.47.jar com.examples.java.empapp.EmployeeManagementApp
+java -cp employee-mgmt-app-jdbc.jar;lib\* com.examples.java.empapp.EmployeeManagementApp
+java -cp *;lib\* com.examples.java.empapp.EmployeeManagementApp
+
+java -cp *;lib\* -Xms512M -Xmx2G -XX:+UseG1GC com.examples.java.empapp.EmployeeManagementApp
+java -jar -Xms64M -Xmx128M -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=heapdump.hprof employee-mgmt-app.jar
+
+#Running Employee Managment App with GC logs enabled
+java -jar -Xms64M -Xmx128M -XX:+PrintGCDetails -Xloggc:gc.log employee-mgmt-app.jar
+java -jar -Xms64M -Xmx128M -XX:+PrintGCDetails employee-mgmt-app.jar
+java -jar -Xms64M -Xmx128M -XX:+UseSerialGC -XX:+PrintGCDetails -Xloggc:gc-ser.log employee-mgmt-app.jar
+
+#Running Employee Managment App with GC tuning
+java -jar -Xms64M -Xmx128M -XX:+UseParallelGC -XX:ParallelGCThreads=4 -XX:MaxGCPauseMillis=150 -XX:GCTimeRatio=19 -XX:+PrintGCDetails -Xloggc:gc-par.log employee-mgmt-app.jar

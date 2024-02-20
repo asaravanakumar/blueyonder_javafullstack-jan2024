@@ -1,0 +1,12 @@
+#Find process listening on specific port (Mac)
+
+netstat -anv | grep 8080
+
+
+#Find process listening on specific port (Mac)
+
+netstat -ano | find "8080" | find "LISTEN"
+
+#Git - Remove large files from commit
+git filter-branch -f --tree-filter 'rm -f /path/to/file' HEAD --all
+

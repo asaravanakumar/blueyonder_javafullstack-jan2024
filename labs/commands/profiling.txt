@@ -1,0 +1,17 @@
+#Start VisualVM with profiler enabled
+jvisualvm -J-Dorg.netbeans.profiler.separateConsole=true
+
+#Start the application to profile
+java -Xverify:none -jar employee-mgmt-app.jar 
+java -Xms64m -Xmx256m -Xverify:none -jar employee-mgmt-app.jar 
+
+java -Xms64m -Xmx256m -Xverify:none -jar employee-mgmt-app.jar 
+java -cp *;lib\* -Xms64m -Xmx256m -Xverify:none com.examples.java.empapp.EmployeeManagementApp
+
+#Start the application with GC logs enabled
+java -Xms64m -Xmx256m -verbose:gc -jar employee-mgmt-app.jar
+java -Xms64m -Xmx256m -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xloggc:gc.log -jar employee-mgmt-app.jar
+
+#Remote connection - VisualVM / JConsole / JMC
+-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
+java -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9010 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -jar employee-mgmt-app.jar

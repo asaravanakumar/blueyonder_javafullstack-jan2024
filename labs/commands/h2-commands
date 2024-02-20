@@ -1,0 +1,8 @@
+#Start H2 Server [starts H2 web console]
+java -jar h2-2.2.224.jar
+
+#H2 web console url
+http://localhost:8082
+
+#Start H2 Server with TCP connection [No web console]
+java -cp h2-2.2.224.jar org.h2.tools.Server -tcp
