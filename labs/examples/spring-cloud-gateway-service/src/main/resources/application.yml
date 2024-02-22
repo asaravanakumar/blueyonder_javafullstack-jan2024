@@ -1,0 +1,31 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+  cloud.gateway.mvc:
+    routesMap:
+      configRoute1:
+        uri: http://localhost:9090/
+        predicates:
+          - Path=/**
+
+# Eureka Client
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+# Logging
+logging:
+  level:
+    org.springframework.cloud.gateway.server.mvc: TRACE
+    org.springframework.web: TRACE
+
+# Actuator Endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
