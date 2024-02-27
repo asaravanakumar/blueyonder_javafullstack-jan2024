@@ -49,7 +49,7 @@ public class UserController {
 
 	@RequestMapping("/authenticate")
 	@CrossOrigin("*")
-	public Principal authenticate(@AuthenticationPrincipal UserPrincipal user) {
+	public Principal authenticate(Principal user) {
 		return user;
 	}
 
@@ -63,14 +63,14 @@ public class UserController {
 
 	@RequestMapping("/manager")
 	@CrossOrigin("*")
-	public Principal manager(@AuthenticationPrincipal UserPrincipal user) {
+	public Principal manager(Principal user) {
 		System.out.println(user);
 		return user;
 	}
 
 	@RequestMapping("/admin")
 	@CrossOrigin("*")
-	public Principal admin(@AuthenticationPrincipal UserPrincipal user) {
+	public Principal admin(Principal user) {
 		return user;
 	}
 }
