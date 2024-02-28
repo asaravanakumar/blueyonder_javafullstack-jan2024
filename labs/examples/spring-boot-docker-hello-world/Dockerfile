@@ -18,4 +18,4 @@ LABEL description="Hello World Docker Demo Image"
 #COPY ${JAR_FILE} app.jar
 COPY  ./target/*.jar app.jar
 ENTRYPOINT ["java","-jar","app.jar"]
-EXPOSE 8080
+EXPOSE 8081
