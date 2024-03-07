@@ -1,0 +1,129 @@
+/* Syntax */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header, footer {
+  text-align: center;
+}
+
+
+
+nav.primary-nav ul li,  nav.footer-nav ul li{
+  display: inline;
+  list-style: none; /* to hide bullet point */
+}
+
+.jumbotron{
+  background: url('../images/panasonic-banner.png') no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+
+.banner-c2a {
+  background-color: blue;
+  color: white;
+  padding: 20px 30px; 
+  border-radius: 10px;
+  /* border: solid 3px orange; */
+  position: relative;
+  bottom: -360px;
+  left: 40%;
+}
+
+h2{	
+  text-align: center;
+}
+
+/* img {
+  width: 100%;
+  height: auto;
+} */
+
+.products-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  gap: 10px;
+  /* border: solid 1px red; */
+}
+
+.products-grid .product-box{
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+/* @media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+} */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  body {
+    background: pink;
+  }
+  .products-grid{
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    gap: 20px;
+    /* border: solid 1px red; */
+  }
+
+  nav.primary-nav {
+    display: none
+  }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  body {
+    background: green;
+  }
+  .products-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 10px;
+    /* border: solid 1px red; */
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  body {
+    background: blue;
+  }
+  .products-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 10px;
+    /* border: solid 1px red; */
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  body {
+    background: orange;
+  }
+  .products-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    gap: 10px;
+    /* border: solid 1px red; */
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    background: white;
+  }
+  .products-grid{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    gap: 10px;
+    /* border: solid 1px red; */
+  }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h2>AJAX Client - GET Request</h2>
+	<div id="getUsers">
+		<button type="button" onclick="loadDoc('https://reqres.in/api/users', myFunction)">Get Users</button>
+	</div>
+	<br>
+	<div id="getUser">
+		<button type="button" onclick="loadDoc('https://reqres.in/api/users/1', myFunction)">Get User</button>
+	</div>	
+	<br>
+	<div id="output">
+	</div>	
+
+	<script>
+		function loadDoc(url, cFunction) {
+			var xhttp;
+			xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					cFunction(this);
+				}
+			};
+			xhttp.open("GET", url, true);
+			xhttp.setRequestHeader("Accept", "application/json");
+			xhttp.send();
+		}
+		function myFunction(xhttp) {
+			var reqData = JSON.parse(xhttp.responseText);
+			var dataStr = JSON.stringify(reqData.data);
+			document.getElementById("output").innerHTML = dataStr;			
+		}
+	</script>
+</body>
+</html>
