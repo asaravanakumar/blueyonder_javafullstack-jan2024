@@ -45,8 +45,42 @@ blueyonder_javabootcamp-jan2024
 	|____ 	capstone
 					|
 					|___ ecomapp
+						   |_____ product-service
+						   |
+						   |_____ category-service
+						   |
+						   |_____ registry-service
+						   |
+						   |_____ gateway-service
+						   |
+						   |_____ auth-service
+						   |
+						   |_____ admin-service
+					   	   |
+						   |_____ ecomapp-ui
+
+						
 					|
 					|___ bankingapp
+						   |
+						   |_____ account-service
+						   |
+						   |_____ transaction-service
+						   |
+						   |_____ fund-transfer-service
+						   |
+						   |_____ registry-service
+						   |
+						   |_____ gateway-service
+						   |
+						   |_____ config-service
+						   |
+						   |_____ auth-service
+						   |
+						   |_____ admin-service
+						   |
+						   |_____ bankingapp-ui
+
 				
 
 				
