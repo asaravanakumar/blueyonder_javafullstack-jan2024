@@ -4,7 +4,7 @@ import MenuList from "../MenuList/MenuList";
 const Footer = () => {
   // any js here 
   const copyrightYear = 2024;
-  const devName = "Kumar";
+  const devName = "BlueYonder";
   
   // return JSX
   return (
@@ -17,7 +17,7 @@ const Footer = () => {
           <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li> */}
           <MenuList />
         </ul> 
-        <p className="text-center text-body-secondary">© {copyrightYear} | {devName}</p>
+        <p className="text-center text-body-secondary">© {copyrightYear} {devName}</p>
     </footer>
   );
 }

@@ -105,6 +105,15 @@ Routing Steps:
   Step 6: Let's check the app. Page will still refresh. Let's fix it. 
     Replace <a href with <Link to
 
+      Context API and useContext Hook
+  ------
+
+  1. Create context using createContext() fn
+  2. Let's provide the data thru the context to the select number of Components
+  3. Get the data from the desired component using useContext() Hook
+
+  
+
 
 
 

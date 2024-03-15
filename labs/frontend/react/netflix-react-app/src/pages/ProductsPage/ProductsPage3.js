@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useCart } from '../../contexts/CartContext';
+
 
 function FilterableProductTable({ products }) {
   const [filterText, setFilterText] = useState('');
@@ -9,7 +11,7 @@ function FilterableProductTable({ products }) {
       <SearchBar
         filterText={filterText}
         inStockOnly={inStockOnly}
-        onFilterTextChange={setFilterText} 
+        onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly} />
       <ProductTable
         products={products}
@@ -30,15 +32,27 @@ function ProductCategoryRow({ category }) {
 }
 
 function ProductRow({ product }) {
+  const { addToCart } = useCart();
+
   const name = product.stocked ? product.name :
     <span style={{ color: 'red' }}>
       {product.name}
     </span>;
 
+  const addToCartBtn = product.stocked ?
+    <button
+      onClick={() => addToCart(product)}
+      className="btn btn-sm btn-primary"
+    >
+      Add to Cart
+    </button> 
+    : '';
+
   return (
     <tr>
       <td>{name}</td>
       <td>{product.price}</td>
+      <td>{addToCartBtn}</td>
     </tr>
   );
 }
@@ -89,7 +103,7 @@ function ProductTable({ products, filterText, inStockOnly }) {
 }
 
 function SearchBar({ filterText, inStockOnly,
-          onFilterTextChange, onInStockOnlyChange }) {
+  onFilterTextChange, onInStockOnlyChange }) {
   return (
     <form>
       <input
@@ -119,6 +133,7 @@ const PRODUCTS = [
 ];
 
 function ProductPage() {
+  // Step 4: Let's subscribe to the data supplied thru context
   return <FilterableProductTable products={PRODUCTS} />;
 }
 
