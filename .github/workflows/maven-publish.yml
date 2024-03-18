@@ -15,7 +15,7 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    if: "github.event_name == 'push' && contains(github.event.head_commit.modified, 'labs/examples/spring-boot-docker-hello-world/')"
+    if: "github.event_name == 'push'"
     
     permissions:
       contents: read
