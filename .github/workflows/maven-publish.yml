@@ -33,7 +33,8 @@ jobs:
 
     - name: Build project 1
       run: |
-          cd labs/examples/spring-boot-docker-hello-world
+          cd ./labs/examples/spring-boot-docker-hello-world
+          pwd
           
     - name: Build with Maven
       run: mvn -B package --file pom.xml
