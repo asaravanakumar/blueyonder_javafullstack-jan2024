@@ -12,7 +12,7 @@ FROM openjdk:21-slim
 
 
 LABEL author="saravana@docker.com"
-LABEL version="1.0"
+LABEL version="1"
 LABEL description="Hello World Docker Demo Image"
 #ARG JAR_FILE
 #COPY ${JAR_FILE} app.jar
