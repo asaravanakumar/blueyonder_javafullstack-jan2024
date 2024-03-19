@@ -1,0 +1,50 @@
+#DDL
+CREATE KEYSPACE IF NOT EXISTS OrderKeySpace WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
+CREATE KEYSPACE IF NOT EXISTS OrderKeySpace WITH REPLICATION = { 'class' : 'NetworkTopologyStragety', datacenter : dc1, 'replication_factor' : 3 };
+DESCRIBE KEYSPACES;
+DESCRIBE KEYSPACE OrderKeySpace;
+USE OrderKeySpace;
+
+CREATE COLUMNFAMILY Orders (id text, type text, qty text, PRIMARY KEY(id));
+DESCRIBE COLUMNFAMILY Orders;
+
+
+INSERT INTO Orders (id, type, qty) VALUES ('1', 'mobile', '10');
+
+SELECT * FROM Orders;
+
+DROP COLUMNFAMILY OrderKeySpace.Orders;
+DROP KEYSPACE OrderKeySpace;
+
+#Stock example
+CREATE KEYSPACE test WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+USE test;
+CREATE TABLE stocks (ticker text, year int, value double, primary key(ticker, year));
+DESCRIBE TABLE stocks;
+DESCRIBE COLUMNFAMILY stocks;
+
+ALTER TABLE stocks ADD supportNumber set<text>;
+INSERT INTO stocks (ticker, year, value) VALUES ('ABC', 2012, 100.0);
+INSERT INTO stocks (ticker, year, value) VALUES ('SAP', 2022, 1000.0);
+INSERT INTO stocks (ticker, year, value) VALUES ('BY', 2024, 2000.0);
+
+
+INSERT INTO stocks (ticker, year, value, supportNumber) VALUES ('XYZ', 2012, 100.0, {'100','200'});
+
+UPDATE stocks SET value=1000 WHERE ticker='SAP' AND year=2022;
+
+UPDATE stocks SET supportNumber = {'1800800800'} WHERE ticker = 'ABC' AND year = 2012;
+UPDATE stocks SET supportNumber = supportNumber + {'1800800801'} WHERE ticker = 'ABC' AND year = 2012; 
+SELECT * FROM stocks;
+
+#UDT (User Defined Type)
+CREATE TYPE address (city text, country text);
+ALTER TABLE STOCKS ADD address address;
+UPDATE STOCKS SET address = {city:'blr',country:'ind'} WHERE ticker='SAP' AND year=2012;
+
+#Batch Query
+BEGIN BATCH
+INSERT INTO stocks (ticker, year, value) VALUES ('ABC', 2012, 100.0);
+UPDATE stocks SET value=1000 WHERE ticker='ABC' AND year=2012;
+DELETE FROM stocks WHERE ticker='ABC';
+APPLY BATCH;

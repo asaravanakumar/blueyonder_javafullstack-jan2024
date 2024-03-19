@@ -1,0 +1,5 @@
+#Cassandra Server
+docker run --name cassandra-server -d -p 7000:7000 -p 9042:9042 cassandra:latest
+
+#Cassandra Client (cqlsh)
+docker exec -it cassandra-server cqlsh
