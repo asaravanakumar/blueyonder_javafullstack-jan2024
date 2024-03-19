@@ -18,7 +18,7 @@ metadata:
   labels:
     app: product-service
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: product-service
@@ -34,4 +34,4 @@ spec:
         - containerPort: 8091
         env:
         - name: REGISTRY_SERVER_HOST
-          value: 10.99.248.123      
+          value: 10.43.9.172      

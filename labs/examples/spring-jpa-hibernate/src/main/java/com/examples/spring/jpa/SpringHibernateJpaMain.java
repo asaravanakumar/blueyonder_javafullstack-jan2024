@@ -44,17 +44,17 @@ public class SpringHibernateJpaMain {
 		order1.setItems(Arrays.asList(item1, item2));
 		
 		Long orderId1 = springHibernateMain.createOrder(order1);	
-		//Long orderId2 = springHibernateMain.createOrder(order1);
+		//Long orderId2 = springHibernateMa
+		//		springHibernateMain.updateOrder(orderId1, "Anil");
+		//
+		//		springHibernateMain.showOrders();
+		//
+		//		springHibernateMain.deleteOrder(orderId1);
+		//
+		//		springHibernateMain.showOrders();in.createOrder(order1);
 		
 		springHibernateMain.showOrders();
-		
-		springHibernateMain.updateOrder(orderId1, "Anil");
-		
-		springHibernateMain.showOrders();
-		
-//		springHibernateMain.deleteOrder(orderId1);
-//
-//		springHibernateMain.showOrders();
+
 	}	
 
 	private Long createOrder(Order order)

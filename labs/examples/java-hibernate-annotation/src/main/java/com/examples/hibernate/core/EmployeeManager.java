@@ -43,13 +43,13 @@ public class EmployeeManager {
 
 		listEmployees();
 
-//		updateEmployee(empId1, "Admin", "Software Engineer");
-//
-//		listEmployees();
-//
-//		deleteEmployee(empId1);
-//
-//		listEmployees();
+		updateEmployee(empId1, "Admin", "Software Engineer");
+
+		listEmployees();
+
+		deleteEmployee(empId1);
+
+		listEmployees();
 
 		// Uncomment to test different query types
 //		listEmployeesWithNativeQuery();

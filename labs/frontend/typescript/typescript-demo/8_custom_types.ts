@@ -18,3 +18,20 @@ let exampleObj1: MyObjType = {
   skills: ["React", "Node"],
   hasExperience: true
 }
+
+interface MyObjType1 {
+  name: string;
+  zipcode: number;
+  skills: string[];
+  hasExperience: boolean;
+}
+
+let exampleObj2: MyObjType1 = {
+  name: "Kumar",
+  zipcode: 560001,
+  skills: ["React", "Node"],
+  hasExperience: true
+}
+
+console.log(exampleObj1)
+console.log(exampleObj2)

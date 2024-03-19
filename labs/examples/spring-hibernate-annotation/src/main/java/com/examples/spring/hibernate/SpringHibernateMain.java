@@ -44,9 +44,9 @@ public class SpringHibernateMain {
 		springHibernateMain.showOrders();
 
 		springHibernateMain.updateOrder(orderId1, "Anil");
-		
+
 		springHibernateMain.showOrders();
-		
+
 		springHibernateMain.deleteOrder(orderId1);
 
 		springHibernateMain.showOrders();

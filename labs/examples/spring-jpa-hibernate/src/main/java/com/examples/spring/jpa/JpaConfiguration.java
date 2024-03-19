@@ -39,7 +39,7 @@ public class JpaConfiguration {
 	@Bean
 	public PGSimpleDataSource dataSource() {
 		PGSimpleDataSource dataSource = new PGSimpleDataSource();
-		dataSource.setDatabaseName("training");
+		dataSource.setDatabaseName("fsd_training");
 		dataSource.setUser("postgres");
 		dataSource.setPassword("postgres");
 		dataSource.setServerNames(new String[]{"localhost"});

@@ -1,9 +1,5 @@
 package com.examples.scart.product.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -21,14 +17,16 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import com.examples.scart.product.model.Product;
 import com.examples.scart.product.repository.ProductRepository;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 public class ProductServiceTests {
 
 	@Autowired
 	ProductService productService;
 
-//	@MockBean
-//	ProductRepository productRepo;
+	@MockBean
+	ProductRepository productRepo;
 
 	@BeforeAll
 	public static void init() {
@@ -42,7 +40,7 @@ public class ProductServiceTests {
 		System.out.println("Test data clean up at class level..");
 	}
 	
-//	private static List<Product> products = new ArrayList<>();
+	private static List<Product> products = new ArrayList<>();
 
 	@BeforeEach
 	public void setup() {
@@ -53,7 +51,7 @@ public class ProductServiceTests {
 		mobile.setCategory("Mobiles");
 		mobile.setManufacturer("Samsung");
 		productService.createProduct(mobile);
-//		products.add(mobile);
+		products.add(mobile);
 
 		Product laptop = new Product();
 		laptop.setId("2");
@@ -61,7 +59,7 @@ public class ProductServiceTests {
 		laptop.setCategory("Laptops");
 		laptop.setManufacturer("Lenovo");
 		productService.createProduct(laptop);
-//		products.add(laptop);
+		products.add(laptop);
 	}
 
 	@AfterEach
@@ -72,10 +70,20 @@ public class ProductServiceTests {
 
 	@Test
 	public void shouldCreateProductWhenPassingMandatoryDetails() {
-		Product product = new Product();
-		product.setId("3");
-		product.setName("Laptop");
-		productService.createProduct(product);
+		Product newProduct = new Product();
+		newProduct.setId("3");
+		newProduct.setName("Laptop");
+		productService.createProduct(newProduct);
+
+		Product savedProduct = new Product();
+		savedProduct.setId("3");
+		savedProduct.setName("Laptop");
+		productService.createProduct(savedProduct);
+
+		Mockito.lenient().when(productRepo.save(Mockito.any())).thenReturn(savedProduct);
+		Mockito.lenient().when(productRepo.findById(Mockito.any())).thenReturn(Optional.of(savedProduct));
+
+		productService.createProduct(newProduct);
 
 		assertNotNull(productService.getProduct("3"));
 		assertEquals("3", productService.getProduct("3").getId());
@@ -83,12 +91,17 @@ public class ProductServiceTests {
 
 	@Test
 	public void shouldShowErrorWhenNotPassingMandatoryDetails() {
+//		Mockito.lenient().when(productRepo.save(Mockito.any())).thenThrow(new RuntimeException("Product Id Mandatory"));
+
 		Product product = new Product();
-		try {
-			productService.createProduct(product);
-		} catch (Exception e) {
-			assertEquals("Product Id mandatory", e.getMessage());
-		}
+
+		Exception e = assertThrows(RuntimeException.class, () -> productService.createProduct(product));
+
+		assertEquals("Product Id mandatory", e.getMessage());
+
+//	} catch (Exception e) {
+//			assertEquals("Product Id mandatory", e.getMessage());
+//		}
 	}
 
 	@Test
@@ -106,6 +119,7 @@ public class ProductServiceTests {
 
 	@Test
 	public void shouldDeleteProductWhenPassingValidProductId() {
+
 		productService.deleteProduct("2");
 		assertNull(productService.getProduct("2"));
 		assertEquals(1, productService.getProducts().size());
@@ -113,7 +127,7 @@ public class ProductServiceTests {
 
 	@Test
 	public void shouldReturnProductForGivenProductId() {
-//		Mockito.when(productRepo.findById("2")).thenReturn(Optional.of(products.get(1)));
+		Mockito.when(productRepo.findById("2")).thenReturn(Optional.of(products.get(1)));
 		
 		
 		assertNotNull(productService.getProduct("2"));
@@ -122,7 +136,7 @@ public class ProductServiceTests {
 
 	@Test
 	public void shouldReturnAllProductsWhenDontSpecifyProductId() {
-//		Mockito.when(productRepo.findAll()).thenReturn(products);
+		Mockito.when(productRepo.findAll()).thenReturn(products);
 		
 		assertEquals(2, productService.getProducts().size());
 	}

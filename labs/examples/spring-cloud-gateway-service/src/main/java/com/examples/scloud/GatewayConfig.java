@@ -22,4 +22,9 @@ public class GatewayConfig {
     public RouterFunction<ServerResponse> getRoute() {
         return RouterFunctions.route().GET("/get", HandlerFunctions.http("https://httpbin.org")).build();
     }
+
+//    @Bean
+//    public RouterFunction<ServerResponse> getProductsRoute() {
+//        return RouterFunctions.route().GET("/products", HandlerFunctions.http("http://localhost:9090")).build();
+//    }
 }

@@ -4,35 +4,44 @@ import './App.css';
 
 // 01: Responding to events 
 
-function Toolbar({ onPlayMovie, onUploadImage }) {
-  return (
-    <div>
-      <Button onClick={onPlayMovie}>
-        Play Movie
-      </Button>
-      <Button onClick={onUploadImage}>
-        Upload Image
-      </Button>
-    </div>
-  );
-}
+// function Toolbar({ onPlayMovie, onUploadImage }) {
 
-function Button({ onClick, children }) {
-  return (
-    <button onClick={onClick}>
-      {children}
-    </button>
-  );
-}
+//   return (
+//     <div>
+//       <Button onClick={onPlayMovie}>
+//         Play Movie
+//       </Button>
+//       <Button onClick={onUploadImage}>
+//         Upload Image
+//       </Button>
+//     </div>
+//   );
+// }
 
-function App() {
-  return (
-    <Toolbar
-      onPlayMovie={() => alert('Playing!')}
-      onUploadImage={() => alert('Uploading!')}
-    />
-  );
-}
+// function handleOnClickPlayButton() {
+//   alert('Playing!');
+// }
+
+// function handleOnClickUploadImageButtion() {
+//   alert('Upload Image!');
+// }
+
+// function Button({ onClick, children }) {
+//   return (
+//     <button onClick={onClick}>
+//       {children}
+//     </button>
+//   );
+// }
+
+// function App() {
+//   return (
+//     <Toolbar
+//       onPlayMovie={() => alert('Playing!')}
+//       onUploadImage={() => alert('Uploading!')}
+//     />
+//   );
+// }
 
 // 02: State - Storing Data at Component Level
 // State - component-specific memory
@@ -367,69 +376,70 @@ function App() {
 
 // 06: Updating arrays in state
 
-// import { useState } from 'react';
+import { useState } from 'react';
 
-// const initialList = [
-//   { id: 0, title: 'Big Bellies', seen: false },
-//   { id: 1, title: 'Lunar Landscape', seen: false },
-//   { id: 2, title: 'Terracotta Army', seen: true },
-// ];
+const initialList = [
+  { id: 0, title: 'Big Bellies', seen: false },
+  { id: 1, title: 'Lunar Landscape', seen: false },
+  { id: 2, title: 'Terracotta Army', seen: true },
+];
 
-// function BucketList() {
-//   const [list, setList] = useState(
-//     initialList
-//   );
+function BucketList() {
+  console.log("BucketList called...");
+  const [list, setList] = useState(
+    initialList
+  );
 
-//   function handleToggle(artworkId, nextSeen) {
-//     setList(list.map(artwork => {
-//       if (artwork.id === artworkId) {
-//         return { ...artwork, seen: nextSeen };
-//       } else {
-//         return artwork;
-//       }
-//     }));
-//   }
+  function handleToggle(artworkId, nextSeen) {
+    setList(list.map(artwork => {
+      if (artwork.id === artworkId) {
+        return { ...artwork, seen: nextSeen };
+      } else {
+        return artwork;
+      }
+    }));
+  }
 
-//   return (
-//     <>
-//       <h1>Art Bucket List</h1>
-//       <h2>My list of art to see:</h2>
-//       <ItemList
-//         artworks={list}
-//         onToggle={handleToggle} />
-//     </>
-//   );
-// }
+  return (
+    <>
+      <h1>Art Bucket List</h1>
+      <h2>My list of art to see:</h2>
+      <ItemList
+        artworks={list}
+        onToggle={handleToggle} />
+    </>
+  );
+}
 
-// function ItemList({ artworks, onToggle }) {
-//   return (
-//     <ul>
-//       {artworks.map(artwork => (
-//         <li key={artwork.id}>
-//           <label>
-//             <input
-//               type="checkbox"
-//               checked={artwork.seen}
-//               onChange={e => {
-//                 onToggle(
-//                   artwork.id,
-//                   e.target.checked
-//                 );
-//               }}
-//             />
-//             {artwork.title}
-//           </label>
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// }
+function ItemList({ artworks, onToggle }) {
+  return (
+    <ul>
+      {artworks.map(artwork => (
+        <li key={artwork.id}>
+          <label>
+            <input
+              type="checkbox"
+              checked={artwork.seen}
+              onChange={e => {
+                onToggle(
+                  artwork.id,
+                  e.target.checked
+                );
+              }}
+            />
+            {artwork.title}
+          </label>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
-// function App() {
-//   return (
-//     <BucketList />
-//   );
-// }
+function App() {
+  return (
+    <BucketList />
+  );
+}
 
 
 

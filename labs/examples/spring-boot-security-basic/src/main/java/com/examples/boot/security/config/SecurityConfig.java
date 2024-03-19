@@ -62,10 +62,10 @@ public class SecurityConfig { // extends WebSecurityConfigurerAdapter {
 				.cors(AbstractHttpConfigurer::disable)
 					.securityMatcher("/**")
 					.sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-					.formLogin(AbstractHttpConfigurer::disable)
+//					.formLogin(AbstractHttpConfigurer::disable)
 				.authorizeHttpRequests(requests -> requests
 						.requestMatchers("/", "/users", "/register").permitAll()
-						.requestMatchers("/user/**").hasRole("USER")
+						.requestMatchers("/user/**").hasAnyRole("USER", "MANAGER", "ADMIN")
 						.requestMatchers("/manager/**").hasAnyRole("MANAGER", "ADMIN")
 						.requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
 						.anyRequest().authenticated())

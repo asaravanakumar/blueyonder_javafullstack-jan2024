@@ -7,11 +7,15 @@ function Login() {
   const handleSubmit = (email, password) => {
     //reqres registered sample user
     const loginPayload = {
-      email: 'eve.holt@reqres.in',
-      password: 'cityslicka'
+      // email: 'eve.holt@reqres.in',
+      // password: 'cityslicka'
+      username: 'test2',
+      password: 'test123'
     }
 
-    axios.post("https://reqres.in/api/login", loginPayload)
+    // axios.post("https://reqres.in/api/login", loginPayload)
+    axios.post("http://localhost:7070/auth/login", loginPayload)
+
       .then(response => {
         //get token from response
         const token = response.data.token;

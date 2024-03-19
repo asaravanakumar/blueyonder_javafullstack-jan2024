@@ -32,7 +32,7 @@ public class HibernateConfiguration {
 	@Bean
 	public PGSimpleDataSource dataSource() {
 		PGSimpleDataSource dataSource = new PGSimpleDataSource();
-		dataSource.setDatabaseName("training");
+		dataSource.setDatabaseName("fsd_training");
 		dataSource.setUser("postgres");
 		dataSource.setPassword("postgres");
 		dataSource.setServerNames(new String[]{"localhost"});
@@ -45,8 +45,8 @@ public class HibernateConfiguration {
 //		props.put("hibernate.dialect", H2Dialect.class.getName());
 		props.put("hibernate.dialect", PostgreSQLDialect.class.getName());
 //		props.put("hibernate.dialect", MySQL8Dialect.class.getName());
-		props.put("hibernate.show_sql", "false");
-		props.put("hibernate.format_sql", "false");
+		props.put("hibernate.show_sql", "true");
+		props.put("hibernate.format_sql", "true");
 		props.put("hibernate.hbm2ddl.auto", "create");
 
 		LocalSessionFactoryBean bean = new LocalSessionFactoryBean();

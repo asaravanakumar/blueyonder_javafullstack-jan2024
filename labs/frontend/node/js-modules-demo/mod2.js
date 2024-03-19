@@ -4,10 +4,10 @@ import {greetings} from './mod1.js'
 // Default Import
 import test from './mod1.js'
 
-// Name Import
+// // Name Import
 import {test1} from './mod1.js'
 
-// List Import
+// // List Import
 import {greetings1, greetings2} from './mod1.js'
 
 console.log(greetings)

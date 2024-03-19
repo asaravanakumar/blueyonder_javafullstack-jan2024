@@ -1,33 +1,33 @@
 import './App.css';
 
 // 01: React Nested Components
-function Profile() {
-  return (
-    <img
-      src="https://i.imgur.com/MK3eW3As.jpg"
-      alt="Katherine Johnson"
-    />
-  );
-}
+// function Profile() {
+//   return (
+//     <img
+//       src="https://i.imgur.com/MK3eW3As.jpg"
+//       alt="Katherine Johnson"
+//     />
+//   );
+// }
 
-function Gallery() {
-  return (
-    <section>
-      <h1>Amazing scientists</h1>
-      <Profile />
-      <Profile />
-      <Profile />
-    </section>
-  );
-}
+// function Gallery() {
+//   return (
+//     <section>
+//       <h1>Amazing scientists</h1>
+//       <Profile />
+//       <Profile />
+//       <Profile />
+//     </section>
+//   );
+// }
 
-function App() {
-  return (
-    <div>
-      <Gallery />
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div>
+//       <Gallery />
+//     </div>
+//   );
+// }
 
 // 02: Writing markup with JSX 
 
@@ -105,11 +105,20 @@ function App() {
 //           imageId: 'YfeOqp2'
 //         }}
 //       />
+//       <Avatar
+//         size={200}
+//         person={{
+//           name: 'asdlfjaldfkjadf',
+//           imageId: 'YfeOqp2'
+//         }} 
+//       />
 //     </Card>
 //   );
 // }
 
 // function Card({ children }) {
+//   console.log(children);
+
 //   return (
 //     <div className="card">
 //       {children}
@@ -117,7 +126,9 @@ function App() {
 //   );
 // }
 
-// function Avatar({ person, size }) {
+// function Avatar({person, size}) {
+//   console.log(person);
+
 //   return (
 //     <img
 //       className="avatar"
@@ -151,9 +162,9 @@ function App() {
 // function Item({ name, isPacked }) {
 //   return (
 //     <li className="item">
-//       {name} {isPacked && '✔'}
+//       {/* {name} {isPacked && '✔'}  */}
 
-//       {/* {name} {isPacked ? '✔' : 'X'} */}
+//       {name} {isPacked ? '✔' : 'X'}
 //     </li>
 //   );
 // }
@@ -266,6 +277,7 @@ function App() {
 
 // function Cup() {
 //   // Bad: changing a preexisting variable!
+//   console.log(guest);
 //   guest = guest + 1;
 //   return <h2>Tea cup for guest #{guest}</h2>;
 // }
@@ -273,7 +285,7 @@ function App() {
 // function TeaSet() {
 //   return (
 //     <>
-//       <Cup />
+//       <Cup /> 
 //       <Cup />
 //       <Cup />
 //     </>
@@ -290,27 +302,27 @@ function App() {
 
 // 06: Keeping components pure - Good Design
  
-// function Cup({ guest }) {
-//   return <h2>Tea cup for guest #{guest}</h2>;
-// }
+function Cup({ guest }) {
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
 
-// function TeaSet() {
-//   return (
-//     <>
-//       <Cup guest={1} />
-//       <Cup guest={2} />
-//       <Cup guest={3} />
-//     </>
-//   );
-// }
+function TeaSet() {
+  return (
+    <>
+      <Cup guest={1} />
+      <Cup guest={2} />
+      <Cup guest={3} />
+    </>
+  );
+}
 
-// function App() {
-//   return (
-//     <div>
-//       <TeaSet />
-//     </div>
-//   );
-// }
+function App() {
+  return (
+    <div>
+      <TeaSet />
+    </div>
+  );
+}
 
 
 

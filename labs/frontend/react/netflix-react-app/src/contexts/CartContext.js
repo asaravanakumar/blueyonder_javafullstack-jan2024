@@ -12,6 +12,10 @@ export const CartProvider = ({ children }) => {
     setCart((current) => [...current, product]);
   };
 
+  // {
+  //   cart: cart,
+  //   addToCart: addToCart
+  // }
   return (
     <CartContext.Provider value={{ cart, addToCart }}>
       {children}

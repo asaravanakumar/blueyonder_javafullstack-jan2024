@@ -14,7 +14,11 @@ isLoggedIn = "Ajay"; // Will throw an error
 */
 
 // the other two of the primitive data types example 
-/*
 let u: undefined = undefined;
 let n: null = null;
-*/
+
+// u = 'Hello';
+// n = 100;
+
+console.log(u);
+console.log(n);

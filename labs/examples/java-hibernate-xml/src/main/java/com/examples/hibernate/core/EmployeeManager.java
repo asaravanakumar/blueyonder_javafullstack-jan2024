@@ -45,7 +45,7 @@ public class EmployeeManager {
 
 		listEmployees();
 
-		updateEmployee(1, "Admin", "Software Engineer");
+		updateEmployee(empId1, "Admin", "Software Engineer");
 
 		listEmployees();
 
@@ -55,7 +55,7 @@ public class EmployeeManager {
 
 //		// Uncomment to test different query types
 		listEmployeesWithNativeQuery();
-		listEmployeesWithHSQL();
+//		listEmployeesWithHSQL();
 //		listEmployeesWithCriteria();
 
 	}

@@ -24,22 +24,22 @@ import './App.css';
 // }
 
 // 02: Creating and nesting components 
-function MyButton() {
-  return (
-    <button>
-      I'm a button
-    </button>
-  );
-}
+// function MyButton() {
+//   return (
+//     <button>
+//       I'm a button
+//     </button>
+//   );
+// }
 
-function App() {
-  return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <MyButton />
-    </div>
-  );
-}
+// function App() {
+//   return (
+//     <div>
+//       <h1>Welcome to my app</h1>
+//       <MyButton />
+//     </div>
+//   );
+// }
 
 // 03: Writing markup with JSX 
 
@@ -157,15 +157,26 @@ function App() {
 // import { useState } from 'react';
 
 // function MyButton() {
-//   const [count, setCount] = useState(0);
+//   console.log("Rendering MyButton Component...");
+//   let [counter, setCounter] = useState({count: 0, msg: "Hi"});
+//   // let count = 0;
 
-//   function handleClick() {
-//     setCount(count + 1);
+//   // 0
+//   // 0 + 1
+//   // 1 + 1
+//   function handleClick(e) {
+
+//     // counter.count = counter.count + 1;
+
+//     setCounter({...counter, count: counter.count + 1});
+//     // count = count + 1;
+//     console.log(e.target);
+//     console.log(counter);
 //   }
 
 //   return (
 //     <button onClick={handleClick}>
-//       Clicked {count} times
+//       Clicked {counter.count} times
 //     </button>
 //   );
 // }
@@ -183,32 +194,32 @@ function App() {
 
 // 08: Sharing data between components
 
-// import { useState } from 'react';
+import { useState } from 'react';
 
-// function MyButton({ count, onClick }) {
-//   return (
-//     <button onClick={onClick}>
-//       Clicked {count} times
-//     </button>
-//   );
-// }
+function MyButton({ count, onClick }) {
+  return (
+    <button onClick={onClick}>
+      Clicked {count} times
+    </button>
+  );
+}
 
-// function App() {
-//   const [count, setCount] = useState(0);
+function App() {
+  const [count, setCount] = useState(0);
 
-//   function handleClick() {
-//     setCount(count + 1);
-//   }
+  function handleClick() {
+    setCount(count + 1);
+  }
 
-//   return (
-//     <div>
-//       <h1>Welcome to my app</h1>
-//       <h1>Counters that update together</h1>
-//       <MyButton count={count} onClick={handleClick} />
-//       <MyButton count={count} onClick={handleClick} />
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <h1>Welcome to my app</h1>
+      <h1>Counters that update together</h1>
+      <MyButton count={count} onClick={handleClick} />
+      <MyButton count={count} onClick={handleClick} />
+    </div>
+  );
+}
 
 
 

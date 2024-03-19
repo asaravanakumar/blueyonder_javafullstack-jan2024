@@ -10,7 +10,7 @@ console.log(city);
 
 // assigning type like this will work fine without throwing errors
 
-let lastName; // no initial value
+let lastName:any = true; // no initial value
 lastName = "Kumar"; //assigning value
 lastName = 1; //assigning another value but of diff data type
 console.log(lastName);

@@ -30,8 +30,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		UserAccount userAccount =  this.userRepository.findByUsername(username).get();
 		
 		return new User(userAccount.getUsername(), userAccount.getPassword(), AuthorityUtils.createAuthorityList("ROLE_" + userAccount.getRole()));
-		
-		
+
 	}
 
 }

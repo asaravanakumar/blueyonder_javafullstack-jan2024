@@ -18,6 +18,10 @@
 			<tr>
 				<td>ID</td>
 				<td>Name</td>
+				<td>Age</td>
+				<td>Designation</td>
+				<td>Department</td>
+				<td>Country</td>
 			</tr> 
 		</thead>
 		<tbody>
@@ -25,6 +29,10 @@
 			<tr>
 				<td><%= emp.getEmpId() %> </td>
 				<td><%= emp.getName() %> </td>
+				<td><%= emp.getAge() %> </td>
+				<td><%= emp.getDesignation() %> </td>
+				<td><%= emp.getDepartment() %> </td>
+				<td><%= emp.getCountry() %> </td>
 			</tr>
 			<%} %>
 		</tbody>

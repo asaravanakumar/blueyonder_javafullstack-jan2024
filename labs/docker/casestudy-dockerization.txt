@@ -61,9 +61,9 @@ docker build --platform linux/amd64 -t scart/admin-service:latest .
 #Run Registry, Product and Gateway Services as docker containers
 docker run -d --name=registry-service -p 8761:8761 scart/registry-service
 
-docker run -d --name=product-service -p 8091:8091 -e "REGISTRY_SERVER_HOST=192.168.99.100" scart/product-service
+docker run -d --name=product-service -p 8091:8091 -e "REGISTRY_SERVER_HOST=172.17.0.2" scart/product-service
 
-docker run -d --name=gateway-service -p 8111:8111 -e "REGISTRY_SERVER_HOST=192.168.99.100" scart/gateway-service
+docker run -d --name=gateway-service -p 8111:8111 -e "REGISTRY_SERVER_HOST=172.17.0.2" scart/gateway-service
 
 docker run -d --name=admin-service -p 7777:7777 -e "REGISTRY_SERVER_HOST=192.168.99.100" scart/admin-service
 
@@ -71,9 +71,9 @@ docker run -d --name=admin-service -p 7777:7777 -e "REGISTRY_SERVER_HOST=192.168
 docker-compose -f docker-compose-kafka.yml up -d
 
 #Run Customer and Order Services as docker containers
-docker run -d --name=customer-service -p 8092:8092 -e "REGISTRY_SERVER_HOST=192.168.99.100" -e "KAFKA_BOOTSTRAP_SERVERS=192.168.99.100:9092" scart/customer-service
+docker run -d --name=customer-service -p 8092:8092 -e "REGISTRY_SERVER_HOST=172.17.0.2" -e "KAFKA_BOOTSTRAP_SERVERS=192.168.128.244:9092" scart/customer-service
 
-docker run -d --name=order-service -p 8093:8093 -e "REGISTRY_SERVER_HOST=192.168.99.100" -e "KAFKA_BOOTSTRAP_SERVERS=192.168.99.100:9092" scart/order-service
+docker run -d --name=order-service -p 8093:8093 -e "REGISTRY_SERVER_HOST=172.17.0.2" -e "KAFKA_BOOTSTRAP_SERVERS=192.168.128.244:9092" scart/order-service
 
 #Create Products
 POST http://localhost:8111/shoppingcart/api/products

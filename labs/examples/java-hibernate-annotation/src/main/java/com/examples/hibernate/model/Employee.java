@@ -3,7 +3,7 @@ package com.examples.hibernate.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "Employee", schema = "public")
 public class Employee {
 
 	@Id

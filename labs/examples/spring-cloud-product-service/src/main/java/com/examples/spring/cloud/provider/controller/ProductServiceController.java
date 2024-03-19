@@ -59,7 +59,7 @@ public class ProductServiceController {
 	  log.info("Received request to list products...");
 //	  Thread.sleep(10000);
 	  try {
-		Thread.sleep(1000);
+		Thread.sleep(100);
 	} catch (InterruptedException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

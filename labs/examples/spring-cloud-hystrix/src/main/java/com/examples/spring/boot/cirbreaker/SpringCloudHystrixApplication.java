@@ -34,7 +34,18 @@ public class SpringCloudHystrixApplication {
 		System.out.println("Response sent - " + new Date());
 		return response;
 	}
-	
+
+	// 11:57:00 - 11:57:10
+	//  	10 requests - 3 consecutive failures or 50% of req failed
+	// 		circuit OPEN - for 10 secs
+			// 11:57:11 - 11:57:20
+			// 5 requests - All failed with fallback response
+				// 11:57:21
+				// 1 request
+					// IF SUCCESS
+						// circuit CLOSED
+					// ELSE
+						// circuit OPEN - for next 10 secs
 	@RequestMapping(value = "/products2")
 	@HystrixCommand(fallbackMethod = "fallbackProducts", commandProperties = {			
 			@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000"),
